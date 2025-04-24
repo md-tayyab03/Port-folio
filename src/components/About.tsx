@@ -1,20 +1,32 @@
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 const About = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.3, once: true });
+
   return (
     <section id="about" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
           <p className="section-subtitle">Get To Know More</p>
           <h2 className="section-title">About Me</h2>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, x: -20 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+            transition={{ 
+              type: "spring",
+              damping: 15,
+              mass: 0.5
+            }}
             className="relative flex justify-center"
           >
             <div className="w-48 h-48 md:w-64 md:h-64 relative overflow-hidden group rounded-[80px]">
@@ -37,7 +49,17 @@ const About = () => {
             </div>
           </motion.div>
 
-          <div className="space-y-6">
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
+            transition={{ 
+              type: "spring",
+              damping: 15,
+              mass: 0.5,
+              delay: 0.2
+            }}
+            className="space-y-6"
+          >
             <p className="text-lg text-gray-400 leading-relaxed">
               I'm an aspiring software engineer with a strong proficiency in C, C++, JavaScript & React
               specializing in both frontend and backend development within Agile methodologies.
@@ -46,7 +68,7 @@ const About = () => {
               Passionate about technology, I am constantly exploring advancements in AI and large
               language models (LLMs) to stay at the forefront of innovation.
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
