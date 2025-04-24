@@ -115,67 +115,22 @@ const skillsData: Skill[] = [
 ];
 
 const Skills = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const skillVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: [0.4, 0, 0.2, 1]
-      }
-    }
-  };
-
-  const skillTagVariants = {
-    hidden: { y: -20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.3,
-        type: "spring",
-        stiffness: 70
-      }
-    }
-  };
-
   return (
     <section id="skills" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12">
           <p className="section-subtitle">Explore My</p>
           <h2 className="section-title text-white">Skills</h2>
-        </motion.div>
+        </div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillsData.map((category) => (
             <motion.div
               key={category.id}
-              variants={skillVariants}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
               className={`bg-gradient-to-br ${category.cardColor} backdrop-blur-sm rounded-xl p-6 border shadow-lg transition-all duration-500 hover:scale-105`}
             >
               <h3 className={`text-xl font-semibold mb-6 ${category.titleColor}`}>
@@ -183,22 +138,17 @@ const Skills = () => {
               </h3>
               <div className="flex flex-wrap gap-3">
                 {category.skills.map((skill, index) => (
-                  <motion.span
+                  <span
                     key={index}
-                    variants={skillTagVariants}
                     className={`skill-tag ${skill.color}`}
-                    whileHover={{
-                      scale: 1.05,
-                      transition: { duration: 0.2 }
-                    }}
                   >
                     {skill.name}
-                  </motion.span>
+                  </span>
                 ))}
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

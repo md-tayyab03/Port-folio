@@ -4,23 +4,17 @@ const About = () => {
   return (
     <section id="about" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12">
           <p className="section-subtitle">Get To Know More</p>
           <h2 className="section-title">About Me</h2>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
-            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
             className="relative flex justify-center"
           >
             <div className="w-48 h-48 md:w-64 md:h-64 relative overflow-hidden group rounded-[80px]">
@@ -43,13 +37,7 @@ const About = () => {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="space-y-6"
-          >
+          <div className="space-y-6">
             <p className="text-lg text-gray-400 leading-relaxed">
               I'm an aspiring software engineer with a strong proficiency in C, C++, JavaScript & React
               specializing in both frontend and backend development within Agile methodologies.
@@ -58,7 +46,7 @@ const About = () => {
               Passionate about technology, I am constantly exploring advancements in AI and large
               language models (LLMs) to stay at the forefront of innovation.
             </p>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
