@@ -5,10 +5,10 @@ const About = () => {
     <section id="about" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-100px" }}
           className="text-center mb-12"
         >
           <p className="section-subtitle">Get To Know More</p>
@@ -17,10 +17,10 @@ const About = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+            viewport={{ once: true, margin: "-100px" }}
             className="relative flex justify-center"
           >
             <div className="w-48 h-48 md:w-64 md:h-64 relative overflow-hidden group rounded-[80px]">
@@ -44,10 +44,10 @@ const About = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+            viewport={{ once: true, margin: "-100px" }}
             className="space-y-6"
           >
             <p className="text-lg text-gray-400 leading-relaxed">

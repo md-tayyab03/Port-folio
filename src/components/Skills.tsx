@@ -116,26 +116,24 @@ const skillsData: Skill[] = [
 
 const Skills = () => {
   const containerVariants = {
-    hidden: { opacity: 0, y: -50 },
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      y: 0,
       transition: {
-        duration: 0.6,
-        staggerChildren: 0.15
+        duration: 0.8,
+        staggerChildren: 0.2
       }
     }
   };
 
   const skillVariants = {
-    hidden: { y: -30, opacity: 0 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
-      y: 0,
       opacity: 1,
+      y: 0,
       transition: {
-        duration: 0.5,
-        type: "spring",
-        stiffness: 50
+        duration: 0.6,
+        ease: [0.4, 0, 0.2, 1]
       }
     }
   };
@@ -157,10 +155,10 @@ const Skills = () => {
     <section id="skills" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-100px" }}
           className="text-center mb-12"
         >
           <p className="section-subtitle">Explore My</p>
@@ -171,14 +169,14 @@ const Skills = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {skillsData.map((category) => (
             <motion.div
               key={category.id}
               variants={skillVariants}
-              className={`bg-gradient-to-br ${category.cardColor} backdrop-blur-sm rounded-xl p-6 border shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105`}
+              className={`bg-gradient-to-br ${category.cardColor} backdrop-blur-sm rounded-xl p-6 border shadow-lg transition-all duration-500 hover:scale-105`}
             >
               <h3 className={`text-xl font-semibold mb-6 ${category.titleColor}`}>
                 {category.title}
