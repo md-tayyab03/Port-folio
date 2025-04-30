@@ -69,28 +69,24 @@ const OtherProjects = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group relative border-b border-zinc-800 py-5 transition-all duration-300 hover:bg-zinc-900/50"
             >
-              <div className="grid grid-cols-4 md:grid-cols-12 gap-2 md:gap-4 items-center px-4">
-                <div className="col-span-1 text-gray-500 text-sm md:text-base">
+              <div className="flex flex-row items-center gap-x-4 md:gap-x-8 px-4 flex-wrap md:flex-nowrap">
+                <div className="text-gray-500 text-sm md:text-base min-w-[48px]">
                   {project.year}
                 </div>
-                <div className="col-span-3 md:col-span-5">
-                  <motion.h3 
-                    className="text-base md:text-lg text-white group-hover:text-yellow-500 transition-colors duration-300"
-                    initial={{ x: 0 }}
-                    whileHover={{ x: 10 }}
-                  >
-                    {project.title}
-                  </motion.h3>
-                </div>
-                <div className="col-span-4 md:col-span-6 text-left md:text-right mt-1 md:mt-0">
-                  <motion.span 
-                    className="text-sm md:text-lg text-gray-400 group-hover:text-white transition-colors duration-300"
-                    initial={{ x: 0 }}
-                    whileHover={{ x: -10 }}
-                  >
-                    {project.description}
-                  </motion.span>
-                </div>
+                <motion.h3 
+                  className="text-base md:text-lg text-white group-hover:text-yellow-500 transition-colors duration-300 min-w-[120px]"
+                  initial={{ x: 0 }}
+                  whileHover={{ x: 10 }}
+                >
+                  {project.title}
+                </motion.h3>
+                <motion.span 
+                  className="text-sm md:text-lg text-gray-400 group-hover:text-white transition-colors duration-300 ml-auto"
+                  initial={{ x: 0 }}
+                  whileHover={{ x: -10 }}
+                >
+                  {project.description}
+                </motion.span>
               </div>
 
               <motion.div 

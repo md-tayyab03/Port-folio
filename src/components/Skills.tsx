@@ -7,7 +7,7 @@ const Skills = () => {
       id="skills" 
       className="py-12 md:py-20 bg-black scroll-mt-16"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 md:mb-12">
           <p className="section-subtitle">Explore My</p>
           <h2 className="section-title text-white">Skills</h2>
@@ -21,7 +21,7 @@ const Skills = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true, margin: "-50px" }}
-              className={`bg-gradient-to-br ${category.cardColor} backdrop-blur-sm rounded-xl p-4 md:p-6 border shadow-lg transition-all duration-500 hover:scale-105`}
+              className={`relative z-10 bg-gradient-to-br ${category.cardColor} backdrop-blur-sm rounded-xl p-4 md:p-6 border shadow-lg transition-all duration-500 hover:scale-105`}
             >
               <h3 className={`text-xl font-semibold mb-4 md:mb-6 ${category.titleColor}`}>
                 {category.title}
