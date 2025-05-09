@@ -10,7 +10,7 @@ const Skills = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 md:mb-12">
           <p className="section-subtitle">Explore My</p>
-          <h2 className="section-title text-white">Skills</h2>
+          <h2 className="section-title text-white">Tech stuff I'm Familiar With</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
