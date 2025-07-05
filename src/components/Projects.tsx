@@ -32,16 +32,16 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: 'MetaForge',
-      description: 'MetaForge is a pro SEO tool that analyzes and optimizes HTML in real time to boost search visibility for developers and content creators.',
+      title: 'BookMyHall',
+      description: 'BookMyHall is a MERN-stack web app for seamless hall booking. It allows users to browse, post, and book venues, catering to both event organizers and hall owners.',
       image: '/assets/P-2.png',
-      githubUrl: 'https://github.com/md-tayyab03/Meta-Forge',
-      demoUrl: 'https://meta-forge-seo.vercel.app/',
+      githubUrl: 'https://github.com/md-tayyab03/Book-my-hall',
+      demoUrl: 'https://book-my-hall-mern.vercel.app/',
       tags: [
+        { name: 'MongoDB', color: 'bg-[#47A248] text-white' },
+        { name: 'Express.js', color: 'bg-[#000000] text-white' },
         { name: 'React', color: 'bg-[#61DAFB] text-black' },
-        { name: 'Node.js', color: 'bg-[#339933] text-white' },
-        { name: 'NPM', color: 'bg-[#CB3837] text-white' },
-        { name: 'Gemini AI', color: 'bg-[#4285F4] text-white' }
+        { name: 'Node.js', color: 'bg-[#339933] text-white' }
       ]
     },
     {
